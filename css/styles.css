@@ -1,31 +1,24 @@
-/* main/static/main/styles.css */
-
 body {
-    background-image: url('/img/Group\ 1.png');
-    background-size: cover; /* Заставляет изображение занимать весь экран */
+    background-image: url('/img/Group%201.png');
     background-size: 100px;
-    background-repeat: repeat; /* Не повторяет изображение */
-    color: white; /* Цвет текста */
-    font-family: Arial, sans-serif; /* Шрифт */
+    background-repeat: repeat;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+/* Sidebar */
 .sidebar {
     position: fixed;
     left: 0;
     top: 0;
     width: 100px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон для боковой панели */
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-right: 1px solid #ddd;
-}
-
-div.content {
-    background-color: rgba(0, 0, 0, 0.7); /* Цвет фона */
-    padding: 20px; /* Внутренние отступы */
-    border: 1px solid #ddd;
-    border-radius: 10px; /* Закругленные углы */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Тень */
+    overflow-y: auto;
 }
 
 .sidebar a {
@@ -35,25 +28,113 @@ div.content {
     margin: 10px 0;
 }
 
+/* Контент */
 .content {
-    margin-left: 220px; /* Отступ для контента */
+    margin-left: 140px; /* 100px width + 20px*2 padding = 140px */
     padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-p a:link{
-    color: white;
-}
-
-p a:visited{
-    color: #ffaaa6;
-}
-
+/* Кнопка */
 .button {
+    display: block;
+    margin: 10px 0;
     border: none;
     cursor: pointer;
     transition: transform 0.3s ease;
-  }
+}
 
-  .button:hover {
-    transform: translateX(10px); /* Смещение вправо на 10px */
-  }
+.button:hover {
+    transform: translateX(10px);
+}
+
+/* Ссылки в <p> */
+p a:link {
+    color: white;
+}
+
+p a:visited {
+    color: #ffaaa6;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .sidebar a {
+        margin: 0;
+        padding: 10px;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .button:hover {
+        transform: none;
+    }
+
+
+
+    .content {
+        margin-left: 0;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .button:hover {
+        transform: none;
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+.content {
+    margin-left: calc(140px + 20px);
+    margin-top: 20px;        /* отступ сверху */
+    margin-right: 20px;      /* отступ справа */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .content {
+        margin: 20px 0 0 0;  /* только верхний отступ */
+        padding: 10px;
+        
+    }
+
+    .sidebar{border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;}
+
+
+
+}
+
+
+
+
