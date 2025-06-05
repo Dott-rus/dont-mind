@@ -30,7 +30,9 @@ body {
 
 /* Контент */
 .content {
-    margin-left: 140px; /* 100px width + 20px*2 padding = 140px */
+    margin-left: calc(140px + 20px);
+    margin-top: 20px;
+    margin-right: 20px;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.7);
     border: 1px solid #ddd;
@@ -71,6 +73,8 @@ p a:visited {
         padding: 10px 0;
         display: flex;
         justify-content: space-around;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 
     .sidebar a {
@@ -84,10 +88,8 @@ p a:visited {
         transform: none;
     }
 
-
-
     .content {
-        margin-left: 0;
+        margin: 20px 10px 0 10px;
         padding: 10px;
     }
 }
@@ -102,39 +104,6 @@ p a:visited {
     }
 
     .content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        /* убрано display: flex, чтобы всё рендерилось нормально */
     }
 }
-
-
-.content {
-    margin-left: calc(140px + 20px);
-    margin-top: 20px;        /* отступ сверху */
-    margin-right: 20px;      /* отступ справа */
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-/* Мобильная версия */
-@media (max-width: 768px) {
-    .content {
-        margin: 20px 0 0 0;  /* только верхний отступ */
-        padding: 10px;
-        
-    }
-
-    .sidebar{border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;}
-
-
-
-}
-
-
-
-
